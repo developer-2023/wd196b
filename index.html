@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object getter setter</title>
+</head>
+<body>
+    
+    <script>
+        
+        const user = {
+            _name: null,
+
+            // setter            
+            set name(newValue) {
+                if (newValue.length > 2) {
+                    this._name = newValue;
+                } else {
+                    console.log("Name too short");
+                }
+            },
+
+            // getter
+            get name() {
+                return this._name;
+            }
+        };
+
+        console.log(user.name);
+        user.name = "Allan";
+        console.log(user.name);
+    </script>
+</body>
+</html>
